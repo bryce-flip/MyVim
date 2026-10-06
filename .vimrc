@@ -36,4 +36,11 @@ set scrolloff=5               " 光标距离上下边缘保留 5 行
 set backspace=indent,eol,start " 退格键正常工作
 
 
+" plugin 
+call plug#begin()
 
+" List your plugins here
+Plug  'vim-airline/vim-airline'
+Plug  'vim-airline/vim-airline-themes'
+
+call plug#end()

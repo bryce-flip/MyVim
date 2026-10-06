@@ -42,7 +42,15 @@ let mapleader = " "
 
 nnoremap <leader>w :w<CR>       " 空格+w 保存
 nnoremap <leader>q :q<CR>       " 空格+q 退出
-nnoremap <leader>h :nohlsearch<CR> " 空格+h 清除搜索高亮
+nnoremap <leader>/ :nohlsearch<CR> " 空格+/ 清除搜索高亮 (h 让给跳转了)
+
+" 空格+hjkl 一次跳 10 行/列; 数字前缀倍增, 如 3空格j 跳 30 行
+" 注: 不能用 <expr> 返回 "30j" 的写法, 已敲的数字前缀会和它拼接成 330j;
+" <Cmd> 映射在命令上下文执行, 计数只经 v:count 传入, 不会拼接
+nnoremap <leader>j <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'j'<CR>
+nnoremap <leader>k <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'k'<CR>
+nnoremap <leader>h <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'h'<CR>
+nnoremap <leader>l <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'l'<CR>
 
 
 " plugin

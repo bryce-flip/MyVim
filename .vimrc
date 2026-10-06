@@ -35,8 +35,17 @@ set ruler                     " 显示光标位置
 set scrolloff=5               " 光标距离上下边缘保留 5 行
 set backspace=indent,eol,start " 退格键正常工作
 
+" ========== Leader 键 ==========
+" 注: Ctrl 是修饰键, 终端不会为单独按下它发送按键码, 无法作为 leader
+" 此处用空格作 leader, 想改逗号/分号只需改下面这行
+let mapleader = " "
 
-" plugin 
+nnoremap <leader>w :w<CR>       " 空格+w 保存
+nnoremap <leader>q :q<CR>       " 空格+q 退出
+nnoremap <leader>h :nohlsearch<CR> " 空格+h 清除搜索高亮
+
+
+" plugin
 call plug#begin()
 
 " List your plugins here

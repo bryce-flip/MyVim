@@ -69,6 +69,7 @@ call plug#begin()
 " List your plugins here
 Plug  'vim-airline/vim-airline'
 Plug  'vim-airline/vim-airline-themes'
+Plug  'connorholyday/vim-snazzy'
 
 call plug#end()
 
@@ -76,3 +77,8 @@ call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
+
+" ========== 配色 ==========
+" 注意顺序: g:SnazzyTransparent 必须在 colorscheme 之前设置 (方案加载时读取)
+let g:SnazzyTransparent = 1     " 打开即不绘制底色, 露出终端透明背景
+colorscheme snazzy

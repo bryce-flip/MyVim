@@ -21,6 +21,7 @@ git clone git@github.com:bryce-flip/MyVim.git ~/MyVim && ~/MyVim/install.sh
 - 改配置：直接编辑本仓库 `.vimrc`，本机立即生效，`git push` 后其他主机 `git -C ~/MyVim pull` 即可
 - 加插件：`.vimrc` 中加 `Plug '...'` 后执行 `:PlugInstall`，并提交 `.vimrc`
 - 更新插件：vim 内 `:PlugUpdate`
+- 配色：snazzy 已 vendor 到 `colors/snazzy.vim`（`.vimrc` 把仓库加入 runtimepath），不依赖外部插件仓库
 
 ## 背景透明（80% 不透明）
 

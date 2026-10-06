@@ -69,7 +69,6 @@ call plug#begin()
 " List your plugins here
 Plug  'vim-airline/vim-airline'
 Plug  'vim-airline/vim-airline-themes'
-Plug  'connorholyday/vim-snazzy'
 
 call plug#end()
 
@@ -79,6 +78,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 
 " ========== 配色 ==========
+" snazzy 已 vendor 进本仓库 colors/ 目录, 不依赖外部插件 (上游 2020 年停更)
+" 注意必须先 resolve 软链再取目录: ~/.vimrc 是软链, 先 :h 会得到 /home/bryce
+execute 'set runtimepath+=' . fnamemodify(resolve(expand('<sfile>:p')), ':h')
 " 注意顺序: g:SnazzyTransparent 必须在 colorscheme 之前设置 (方案加载时读取)
 let g:SnazzyTransparent = 1     " 打开即不绘制底色, 露出终端透明背景
 colorscheme snazzy

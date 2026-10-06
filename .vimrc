@@ -63,12 +63,20 @@ nnoremap <C-h> <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'h'<CR>
 nnoremap <C-l> <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'l'<CR>
 
 
+" ========== 标签页 ==========
+" tt 切换到下一个标签页 (内置 gt/gT 仍可用, 带计数如 3gt)
+nnoremap tt :tabnext<CR>
+" 空格+n 新建标签页
+nnoremap <leader>n :tabnew<CR>
+
+
 " plugin
 call plug#begin()
 
 " List your plugins here
 Plug  'vim-airline/vim-airline'
 Plug  'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
@@ -84,3 +92,9 @@ execute 'set runtimepath+=' . fnamemodify(resolve(expand('<sfile>:p')), ':h')
 " 注意顺序: g:SnazzyTransparent 必须在 colorscheme 之前设置 (方案加载时读取)
 let g:SnazzyTransparent = 1     " 打开即不绘制底色, 露出终端透明背景
 colorscheme snazzy
+
+
+" ========== NERDTree ==========
+nnoremap <C-t> :NERDTreeToggle<CR>
+let g:NERDTreeShowHidden = 1
+

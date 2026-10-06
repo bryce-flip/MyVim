@@ -52,6 +52,12 @@ nnoremap <leader>k <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'k'
 nnoremap <leader>h <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'h'<CR>
 nnoremap <leader>l <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'l'<CR>
 
+" 按住 Ctrl 连续点按 hjkl 同样跳 10 行/列 (空格是字符键无法按住, Ctrl 是真修饰键)
+nnoremap <C-j> <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'j'<CR>
+nnoremap <C-k> <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'k'<CR>
+nnoremap <C-h> <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'h'<CR>
+nnoremap <C-l> <Cmd>execute 'normal! ' . (v:count ? v:count * 10 : 10) . 'l'<CR>
+
 
 " plugin
 call plug#begin()
